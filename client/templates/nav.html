@@ -1,0 +1,23 @@
+<template name="nav">
+    
+    <div class="navbar">
+    	<a class="navbar-brand" href="{{pathFor 'home'}}">Quiz</a>
+    	<ul class="nav navbar-nav">
+    		<li class="active">
+    			<a href="{{pathFor 'home'}}">Home</a>
+    		</li>
+    		<li>
+    			<a href="{{pathFor 'quiz'}}">Quiz</a>
+    		</li>
+            {{#if loggedadmin}}
+            <li>
+                <a href="{{pathFor 'admin'}}">Admin</a>
+            </li>
+            {{/if}}
+    	</ul>
+        <ul class="nav pull-right">
+            {{>loginButtons align="right"}}
+        </ul>
+    </div>
+    
+</template>

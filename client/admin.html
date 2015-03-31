@@ -1,0 +1,43 @@
+<template name="admin">
+    <h1>Admin</h1>
+
+
+
+    <ul class="list-group nav nav-pills nav-stacked">
+        {{#each Questions}}
+
+            <li><a href="#" class="list-group-item question {{#if isCurrent}}active{{/if}}">{{question}}</a></li>
+        {{/each}}
+
+    </ul>
+
+
+    <div class="btn-toolbar" role="toolbar">
+        <div class="btn-group">
+            <button type="button" class="btn btn-default previous">Wstecz</button>
+
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default next">Dalej</button>
+        </div>
+    </div>
+
+
+
+
+    <h1>Odpowiedzi</h1>
+
+    <ul class="list-group nav nav-pills nav-stacked">
+        {{#each Answers}}
+            {{>usernamesList}}
+        {{/each}}
+
+    </ul>
+
+</template>
+
+<template name="usernamesList">
+    <li><a href="#" class="list-group-item answer">{{username}}</a></li>
+    {{test.T1.Q1}}
+</template>
+

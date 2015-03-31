@@ -1,0 +1,28 @@
+<template name="quizmain">
+
+
+<!--
+<ul class="list-group">
+
+
+
+    {{#each Questions}}
+        <li class="list-group-item">{{question}}</li>
+    {{/each}}
+
+</ul>
+-->
+
+
+
+     <h2>{{Question.question}}</h2>
+    <ul class="list-group nav nav-pills nav-stacked">
+        <li><a href="#" class="list-group-item answer">{{Question.answers.A}}</a></li>
+        <li><a href="#" class="list-group-item answer">{{Question.answers.B}}</a></li>
+        <li><a href="#" class="list-group-item answer">{{Question.answers.C}}</a></li>
+        <li><a href="#" class="list-group-item answer">{{Question.answers.D}}</a></li>
+
+
+    </ul>
+
+</template>
