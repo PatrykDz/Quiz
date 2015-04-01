@@ -1,0 +1,16 @@
+Answers.insert(
+{"userId" : "X67n8vbiraEsEvWYD",
+"username" : "ania",
+    "test" : [{
+        "T1" :[{ 
+	     "Q1":"A",
+	     "Q2":"D",
+	     "Q3":"D"
+	}],
+        "T2" : [{
+	     "Q1":"A",
+	     "Q2":"D",
+	     "Q3":"D"
+	}]
+    }]
+});

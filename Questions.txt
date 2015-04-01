@@ -1,0 +1,11 @@
+Questions.insert(
+{"nr" : 1,
+    "question" : "Pytanie nr 1",
+    "answers" : {
+        "A" : "a",
+        "B" : "b",
+        "C" : "c",
+        "D" : "d"
+    },
+    "isCurrent" : false
+});
