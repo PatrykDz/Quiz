@@ -1,11 +1,55 @@
 Questions.insert(
-{"nr" : 1,
-    "question" : "Pytanie nr 1",
-    "answers" : {
-        "A" : "a",
-        "B" : "b",
-        "C" : "c",
-        "D" : "d"
-    },
-    "isCurrent" : false
+{
+    "T1":{
+            {"nr" : 1,
+                "question" : "Pytanie nr 1",
+                    "answers" : {
+                        "A" : "a",
+                        "B" : "b",
+                        "C" : "c",
+                        "D" : "d"
+                    },
+                 "isCurrent" : false
+            },
+        "isCurrentTest" : true
+      }
+});
+
+
+
+
+
+
+
+Questions.insert(
+{       "test_nr":1,
+        "questions":{
+            "nr" : 1,
+                "question" : "Pytanie nr 1",
+                    "answers" : {
+                        "A" : "a",
+                        "B" : "b",
+                        "C" : "c",
+                        "D" : "d"
+                    },
+                 "isCurrent" : false
+                 },
+        "isCurrentTest" : true
+});
+
+
+Questions.insert(
+{       "test_nr":1,
+        "questions":[{
+            "nr" : 1,
+                "question" : "Pytanie nr 1",
+                    "answers" : {
+                        "A" : "a",
+                        "B" : "b",
+                        "C" : "c",
+                        "D" : "d"
+                    },
+                 "isCurrent" : false
+                 }],
+        "isCurrentTest" : true
 });
