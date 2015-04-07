@@ -3,17 +3,38 @@ Template.quizmain.helpers({
 
 
     Questions: function () {
-        return Questions.find({});
+
+        var curTest = Tests.findOne({"isCurrent":true});
+        //console.log(curTest._id);
+
+        return Questions.findOne({"test_id":curTest._id, "isCurrent":true});
 
 
     },
+
+    Answers: function() {
+        var curTest = Tests.findOne({"isCurrent":true});
+        //console.log(curTest._id);
+
+        var curQuestion = Questions.findOne({"test_id":curTest._id, "isCurrent":true});
+
+        return Answers.findOne({"question_id":curQuestion._id});
+
+    },
+
+
 
     Tests: function(){
 
-        return Questions.find({});
+        return Tests.find({});
     },
 
     Test: function() {
+
+        return Tests.findOne({"isCurrent":true});
+
+
+
 
 /*
         var test = this.test;
@@ -24,7 +45,15 @@ Template.quizmain.helpers({
 
             return {name: key, testAnswers: answers}; // resulting array looks like [{test: 'T1', testAnswers: [{question: 'Q1', answer: 'A', ...}]}]
         });
-        */
+
+
+
+
+
+
+
+
+
 
         var curTest = Questions.findOne({isCurrentTest:true});
 
@@ -34,7 +63,7 @@ Template.quizmain.helpers({
 
 
 
-
+ */
 
     }
 });

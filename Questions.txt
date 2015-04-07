@@ -81,6 +81,12 @@ Tests.insert(
         isCurrent:false
 });
 
+Tests.insert(
+{       "test_nr":2,
+        "name":"Następny przykładowy test",
+        isCurrent:false
+});
+
 
 QUESTIONS
 

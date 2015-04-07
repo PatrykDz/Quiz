@@ -2,40 +2,77 @@
     <h1>Admin</h1>
 
 
-
     <ul class="list-group nav nav-pills nav-stacked">
         {{#each Tests}}
 
-           <!-- <li><a href="#" class="list-group-item test {{#if isCurrentTest}}active{{/if}}">{{test_nr}}</a></li> -->
+            <div class="input-group">
+                <a href="#" class="list-group-item test {{#if isCurrent}}active{{/if}}">{{test_nr}} {{name}}</a>
+            <span class="input-group-btn">
+                 <button type="submit" class="btn btn-danger pull-right delete_test">-</button>
+            </span>
+            </div>
 
-            {{>questionsList}}
+
+
+
+
+            <!--{{>questionsList}} -->
 
         {{/each}}
 
+
+        <form class="addTest" method="post">
+            <div class="input-group">
+                <input type="text" name="testName" id="testName" class="form-control" value="" title=""
+                       required="required" placeholder="Nazwa testu">
+            <span class="input-group-btn">
+        <button type="submit" class="btn btn-success pull-right">+</button>
+      </span>
+            </div>
+        </form>
+
     </ul>
-
-
 
 
     <ul class="list-group nav nav-pills nav-stacked">
 
         {{#each Questions}}
 
-            <li><a href="#" class="list-group-item question {{#if isCurrent}}active{{/if}}">{{question}}</a></li>
+            <li>
 
-            {{>newquestionsList}}
+
+                <div class="input-group">
+                    <a href="#" class="list-group-item question {{#if isCurrent}}active{{/if}}">{{question_nr}} {{question}}</a>
+            <span class="input-group-btn">
+                 <button type="submit" class="btn btn-danger pull-right delete_question">-</button>
+            </span>
+                </div>
+
+
+            </li>
+
+
+
+
+
 
 
 
         {{/each}}
 
+
+        <form class="addQuestion" metod="post">
+            <div class="input-group">
+                <input type="text" name="question" id="question" class="form-control" value="" title=""
+                       required="required" placeholder="Pytanie">
+            <span class="input-group-btn">
+        <button type="submit" class="btn btn-success pull-right">+</button>
+      </span>
+            </div>
+        </form>
+
+
     </ul>
-
-
-
-
-
-
 
 
 
@@ -51,6 +88,53 @@
         </div>
     </div>
 
+<br>
+
+    {{#with Answers}}
+
+        <ul class="list-group nav nav-pills nav-stacked">
+            <li><a href="#" class="list-group-item answer" id="A">A: {{Answers.A}}</a></li>
+            <li><a href="#" class="list-group-item answer" id="B">B: {{Answers.B}}</a></li>
+            <li><a href="#" class="list-group-item answer" id="C">C: {{Answers.C}}</a></li>
+            <li><a href="#" class="list-group-item answer" id="D">D: {{Answers.D}}</a></li>
+
+        </ul>
+    {{else}}
+
+
+
+        <form class="addAnswers" method="post">
+
+            <div class="input-group">
+                <span class="input-group-addon" id="sizing-addon3">A</span>
+                <input type="text" class="form-control" name="A" aria-describedby="sizing-addon3" required="required"
+                       autocomplete="off">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="sizing-addon3">B</span>
+                <input type="text" class="form-control" name="B" aria-describedby="sizing-addon3" required="required"
+                       autocomplete="off">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="sizing-addon3">C</span>
+                <input type="text" class="form-control" name="C" aria-describedby="sizing-addon3" required="required"
+                       autocomplete="off">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="sizing-addon3">D</span>
+                <input type="text" class="form-control" name="D" aria-describedby="sizing-addon3" required="required"
+                       autocomplete="off">
+            </div>
+
+
+            <button type="submit" class="btn btn-success form-control"><span class="glyphicon glyphicon-floppy-disk"
+                                                                             aria-hidden="true"></span></button>
+
+        </form>
+
+    {{/with}}
+
+
 
 
 
@@ -61,11 +145,11 @@
     <h1>Odpowiedzi</h1>
 
 
-        <ul class="list-group nav nav-pills nav-stacked">
-            {{#each Answers}}
-                {{>usernamesList}}
-            {{/each}}
-        </ul>
+    <ul class="list-group nav nav-pills nav-stacked">
+        {{#each UserAnswers}}
+            {{>usernamesList}}
+        {{/each}}
+    </ul>
 
 </template>
 
@@ -95,12 +179,6 @@
 
     </ul>
 </template>
-
-
-
-
-
-
 
 
 <template name='newquestionsList'>
