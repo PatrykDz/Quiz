@@ -36,29 +36,6 @@ Template.admin.helpers({
 
 });
 
-Template.questionsList.helpers({
-    quest: function(){
-        return "Quest";
-    }
-
-});
-
-Template.usernamesList.helpers({
-    usersTests: function() { // Convert the `test` object into an array of objects:
-        var test = this.test;
-        return _.map(Object.keys(test), function(key) {
-            var answers = _.map(Object.keys(test[key]), function(question) { // also go ahead and convert this to objects
-                return {question: question, answer: test[key][question]};
-            });
-
-            return {name: key, testAnswers: answers}; // resulting array looks like [{test: 'T1', testAnswers: [{question: 'Q1', answer: 'A', ...}]}]
-        });
-    }
-});
-
-Template.newquestionsList.helpers({
-
-});
 
 Template.admin.events({
     "click .next": function (event, template) {
@@ -180,3 +157,19 @@ Template.admin.events({
 });
 
 
+
+Template.UAnswers.helpers({
+
+    UserAnswered: function(){
+
+        var curTest = Tests.findOne({"isCurrent":true});
+        var curQuestion = Questions.findOne({"test_id": curTest._id, "isCurrent":true});
+
+        console.log(curQuestion);
+
+        return UserAnswers.find({"question_id":curQuestion._id});
+
+
+    }
+
+});

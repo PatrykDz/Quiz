@@ -72,8 +72,29 @@ Template.quizmain.helpers({
 Template.quizmain.events({
 
    "click .answer": function(event, template){
-        alert(event.currentTarget.id);
+        //alert(event.target.id);
 
+       //console.log(event.target.name);
+
+       var question = Questions.findOne({"_id":event.target.name});
+    //alert(question.question);
+
+    //alert(Meteor.user().username);
+
+
+
+       if(UserAnswers.findOne({"user_id":Meteor.user()._id, "question_id":question._id}) === undefined)
+       {
+
+           UserAnswers.insert({
+               "user_id": Meteor.user()._id,
+               "username": Meteor.user().username,
+               "question_id": question._id,
+               "answer": event.target.id
+           });
+       }else{
+           alert("Możesz odpowiedzieć tylko raz");
+       }
 
 
    }

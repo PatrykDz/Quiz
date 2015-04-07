@@ -1,0 +1,45 @@
+
+    <ul class="list-group nav nav-pills nav-stacked">
+        {{#each UserAnswers}}
+            {{>usernamesList}}
+        {{/each}}
+    </ul>
+
+</template>
+
+
+
+
+
+
+<template name='usernamesList'>
+    <li><a href="#" class="list-group-item answer">{{username}}</a></li>
+    <ul><!-- get each test as a sub-bullet -->
+        {{#each usersTests}}
+            <li>{{name}}</li>
+            <ul><!-- get each question's answer as a sub-bullet -->
+                {{#each testAnswers}}
+                    <li><strong>{{question}}</strong>: {{answer}}</li>
+                {{/each}}
+            </ul>
+        {{/each}}
+    </ul>
+</template>
+
+
+<template name='questionsList'>
+    <li><a href="#" class="list-group-item test {{#if isCurrentTest}}active{{/if}}">{{test_nr}}</a></li>
+    <ul><!-- get each test as a sub-bullet -->
+
+        {{#each questions}}
+            <li>{{question}}</li>
+        {{/each}}
+
+    </ul>
+</template>
+
+
+<template name='newquestionsList'>
+
+</template>
+
