@@ -173,3 +173,17 @@ Template.UAnswers.helpers({
     }
 
 });
+
+Template.UAnswers.events({
+   "click .resetanswers":function(events, template){
+
+       var curTest = Tests.findOne({"isCurrent":true});
+       var curQuestion = Questions.findOne({"test_id": curTest._id, "isCurrent":true});
+
+       var u = UserAnswers.findOne({"question_id":curQuestion._id});
+
+       UserAnswers.remove(u._id);
+
+   }
+
+});
