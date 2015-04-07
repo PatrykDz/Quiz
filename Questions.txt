@@ -53,3 +53,72 @@ Questions.insert(
                  }],
         "isCurrentTest" : true
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+========================================================
+
+
+
+TESTS
+
+
+Tests.insert(
+{       "test_nr":1,
+        "name":"Przykładowy test",
+        isCurrent:false
+});
+
+
+QUESTIONS
+
+Questions.insert({
+        "test_id":"ufGYQTh29ELvQt4Rt",
+        "question_nr":1,
+        "question":"To jest pierwsze pytanie",
+        "isCurrent":true
+});
+
+Questions.insert({
+        "test_id":"ufGYQTh29ELvQt4Rt",
+        "question_nr":2,
+        "question":"To jest drugie pytanie",
+        "isCurrent":false
+});
+
+ANSWERS
+
+Answers.insert({
+        "question_id":"cEwfKuqkcTScQh6cC",
+        "answers":[
+            {"A":"Odpowiedź A"},
+            {"B":"Odpowiedź B"},
+            {"C":"Odpowiedź C"},
+            {"D":"Odpowiedź D"}
+        ]
+});
+
+
+LUB
+
+
+Answers.insert({
+           "question_id":"hi9z2fYFwqH4xAzN9",
+               "A":"Odpowiedź A",
+               "B":"Odpowiedź B",
+               "C":"Odpowiedź C",
+               "D":"Odpowiedź D"
+
+   });
