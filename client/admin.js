@@ -187,3 +187,49 @@ Template.UAnswers.events({
    }
 
 });
+
+
+Template.UAnswers.topGenresChart = function() {
+
+   /* var x = UserAnswers.find({"question_id":curQuestion._id, "answer":"A"}).count();
+    alert(x);
+*/
+    return {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        },
+        title: {
+            text: this.username + "'s top genres"
+        },
+        tooltip: {
+            pointFormat: '<b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    },
+                    connectorColor: 'silver'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'genre',
+            data: [
+                ['A',   10],
+                ['B',       26.8],
+                ['C',   12.8],
+                ['D',    8.5]
+            ]
+        }]
+    };
+};
+
